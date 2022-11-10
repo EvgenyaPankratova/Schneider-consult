@@ -1,0 +1,388 @@
+@import url('nullstyle.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap');
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+	max-width: 100%;
+}
+
+.container {
+display: grid;
+grid-template-areas:
+"header"
+"menu"
+"slider"
+"content"
+"footer";
+
+
+}
+
+/**************HEADER*************/
+.header {
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	width: 980px;
+	margin: 0 auto;
+	padding: 10px;
+
+}
+.header__tel{
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 35px;
+}
+.header__sale{
+	padding-top: 20px;
+}
+
+/**************MENU*************/
+.menu {
+	grid-area: menu;
+	background-color: darkgreen;
+	padding: 10px 60px 10px 60px;
+	
+}
+.menu__link_block{
+	text-align: center;
+	max-width: 980px;
+	margin: 0 auto;
+
+}
+.menu__link{
+	text-decoration: none;
+	color: white;
+	padding-right: 20px;
+	position: relative;
+	line-height: 1;
+	margin-right: 10px;
+
+}
+.menu__link:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 1px; /*задаём ширину линии*/
+	background-color: white; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.2s ease-out; /*задаём время анимации*/
+}
+
+.menu__link:hover:after,
+.menu__link:focus:after {
+	width: 85%; /*устанавливаем значение чтобы ссылка подчёркивалась полностью*/
+}
+.menu__link:not(:last-of-type) {
+  border-right: 1px solid white;
+}
+
+/**************SLIDER*************/
+.slider {
+grid-area: slider;
+}
+
+.slider__image{
+	width: 100%;
+}
+.slider__image-img{
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+/**************CONTENT*************/
+
+.content {
+	grid-area: content;
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 10px 80px 10px;
+	max-width: 980px;
+	margin: 0 auto;
+}
+.news{
+	background-color: darkgreen;
+	max-width: 35%;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 55px 10px 30px;
+	color: white;
+
+}
+.news__subtitle{
+	font-size: 27px;
+	font-weight: 700;
+	padding-bottom: 20px;
+}
+.news__text-block{
+	padding-top: 15px;
+}
+.news__data{
+	font-style: italic;
+}
+.news__archive{
+	text-align: right;
+	padding-top: 50px;
+}
+.about_us{
+	max-width: 60%;
+	padding: 20px 20px 20px 30px;
+	border: 2px dotted darkgreen;
+
+}
+.about_us__company__subtitle{
+	font-size: 22px;
+	padding-bottom: 20px;
+}
+.about_us__company__text{
+	margin-bottom: 10px;
+
+}
+.about_us__services__subtitle{
+	font-size: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+.about_us__services__text-block{
+	display: flex;
+
+}
+.text-block__subtitle {
+	font-weight: 700;
+	padding-bottom: 15px;
+}
+.text-block1{
+	margin-right: 25px;
+}
+
+/**************FOOTER*************/
+.footer {
+	grid-area: footer;
+	background-color: darkgreen;
+
+}
+.footer__container{
+	max-width: 980px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 10px;
+	color: white;
+}
+.footer__foot_menu{
+	display: flex;
+	flex-direction: column;
+
+}
+.footer__foot_menu_link{
+	color: white;
+}
+
+
+
+
+/**************МЕДИА-ЗАПРОСЫ*************/
+@media (max-width: 575px) {
+	.header {
+	width: 100%;
+	padding: 10px;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+}
+.header__tel{
+	font-size: 16px;
+}
+/**************MENU*************/
+.menu {
+	padding: 10px;
+	
+}
+.menu__link_block{
+	text-align: center;
+	max-width: 100%;
+}
+.menu__link{
+	text-decoration: none;
+	font-size: 12px;
+	color: white;
+	padding-right: 10px;
+	position: relative;
+	line-height: 1;
+	margin-right: 10px;
+}
+/**************SLIDER*************/
+.slider {
+grid-area: slider;
+}
+
+.slider__image{
+	width: 100%;
+}
+.slider__image-img{
+	width: 100%;
+	max-width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+/**************CONTENT*************/
+
+.content {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.news{
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	margin-bottom: 10px;
+
+}
+.news__subtitle{
+	font-size: 25px;
+	font-weight: 700;
+	padding-bottom: 20px;
+}
+.news__text-block{
+	padding-top: 15px;
+}
+.news__archive{
+	padding-top: 40px;
+}
+.about_us{
+	max-width: 100%;
+	padding: 10px;
+}
+.about_us__company__subtitle{
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+.about_us__company__text{
+	margin-bottom: 10px;
+
+}
+.about_us__services__subtitle{
+	font-size: 18px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.text-block__subtitle {
+	padding-bottom: 15px;
+}
+.text-block1{
+	margin-right: 20px;
+}
+/**************FOOTER*************/
+.footer__container{
+	width: 100%;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.footer__contacts{
+	margin-bottom: 20px;
+}
+.footer__foot_menu{
+	margin-bottom: 20px;
+	}
+}
+
+
+
+
+
+@media (min-width: 576px) and (max-width: 980px){
+	.header {
+	width: 100%;
+	
+}
+.header__tel{
+	font-size: 18px;
+}
+/**************MENU*************/
+.menu {
+	padding: 10px;
+	
+}
+.menu__link_block{
+	text-align: center;
+	max-width: 100%;
+}
+
+/**************SLIDER*************/
+
+.slider__image-img{
+	width: 100%;
+	max-width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+/**************CONTENT*************/
+
+.content {
+	display: flex;
+	padding: 10px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.news{
+	max-width: 35%;
+	padding: 10px;
+}
+.news__subtitle{
+	font-size: 25px;
+	padding-bottom: 20px;
+}
+.news__text-block{
+	padding-top: 15px;
+}
+.news__archive{
+	padding-top: 60px;
+}
+.about_us{
+	max-width: 60%;
+	padding: 10px;
+}
+.about_us__company__subtitle{
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+.about_us__company__text{
+	margin-bottom: 10px;
+
+}
+.about_us__services__subtitle{
+	font-size: 18px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.text-block__subtitle {
+	padding-bottom: 15px;
+}
+.text-block1{
+	margin-right: 20px;
+}
+/**************FOOTER*************/
+.footer__container{
+	width: 100%;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 10px;
+	display: flex;
+	}	
+
+}
